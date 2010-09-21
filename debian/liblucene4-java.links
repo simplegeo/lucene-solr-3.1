@@ -1,0 +1,17 @@
+/usr/share/java/lucene-ant-4.0-dev.jar /usr/share/java/lucene-ant.jar
+/usr/share/java/lucene-benchmark-4.0-dev.jar /usr/share/java/lucene-benchmark.jar
+/usr/share/java/lucene-core-4.0-dev.jar /usr/share/java/lucene-core.jar
+/usr/share/java/lucene-demo-4.0-dev.jar /usr/share/java/lucene-demo.jar
+/usr/share/java/lucene-highlighter-4.0-dev.jar /usr/share/java/lucene-highlighter.jar
+/usr/share/java/lucene-instantiated-4.0-dev.jar /usr/share/java/lucene-instantiated.jar
+/usr/share/java/lucene-lucli-4.0-dev.jar /usr/share/java/lucene-lucli.jar
+/usr/share/java/lucene-memory-4.0-dev.jar /usr/share/java/lucene-memory.jar
+/usr/share/java/lucene-misc-4.0-dev.jar /usr/share/java/lucene-misc.jar
+/usr/share/java/lucene-queries-4.0-dev.jar /usr/share/java/lucene-queries.jar
+/usr/share/java/lucene-queryparser-4.0-dev.jar /usr/share/java/lucene-queryparser.jar
+/usr/share/java/lucene-remote-4.0-dev.jar /usr/share/java/lucene-remote.jar
+/usr/share/java/lucene-spatial-4.0-dev.jar /usr/share/java/lucene-spatial.jar
+/usr/share/java/lucene-spellchecker-4.0-dev.jar /usr/share/java/lucene-spellchecker.jar
+/usr/share/java/lucene-swing-4.0-dev.jar /usr/share/java/lucene-swing.jar
+/usr/share/java/lucene-wordnet-4.0-dev.jar /usr/share/java/lucene-wordnet.jar
+/usr/share/java/lucene-xml-query-parser-4.0-dev.jar /usr/share/java/lucene-xml-query-parser.jar

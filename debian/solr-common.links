@@ -1,0 +1,8 @@
+/usr/share/java/apache-solr-4.0-dev.war /usr/share/java/apache-solr.war
+/usr/share/java/apache-solr-cell-4.0-dev.jar /usr/share/java/apache-solr-cell.jar
+/usr/share/java/apache-solr-clustering-4.0-dev.jar /usr/share/java/apache-solr-clustering.jar
+/usr/share/java/apache-solr-core-4.0-dev.jar /usr/share/java/apache-solr-core.jar
+/usr/share/java/apache-solr-dataimporthandler-4.0-dev.jar /usr/share/java/apache-solr-dataimporthandler.jar
+/usr/share/java/apache-solr-dataimporthandler-extras-4.0-dev.jar /usr/share/java/apache-solr-dataimporthandler-extras.jar
+/usr/share/java/apache-solr-solrj-4.0-dev.jar /usr/share/java/apache-solr-solrj.jar
+/etc/solr/conf /usr/share/solr/conf

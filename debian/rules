@@ -1,0 +1,68 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/ant.mk
+
+
+# Add here any variable or target overrides you need.
+
+ARTIFACTS ?= .
+VERSION = 4.0-dev
+JAVA_HOME := /usr/lib/jvm/java-6-openjdk
+DEB_ANT_CHECK_TARGET := #test
+DEB_ANT_BUILD_TARGET := compile
+DEB_JARS := ant-junit
+ANT_OPTS += -Dant.library.dir=/usr/share/ant/lib
+DEB_ANT_INVOKE := $(subst ant.Main,ant.launch.Launcher,$(DEB_ANT_INVOKE))
+ANT = $(DEB_ANT_INVOKE)
+SCRIPTS = $(wildcard solr/src/scripts/*)
+
+build/liblucene4-java::
+	cd lucene && $(ANT) jar build-contrib
+
+install/liblucene4-java::
+	mkdir -p $(ARTIFACTS)/tests/lucene
+	-cp -R lucene/build/test/* $(ARTIFACTS)/tests/lucene
+
+	install -m 0755 -d $(DEB_DESTDIR)/usr/bin $(DEB_DESTDIR)/usr/share/java
+	install lucene/contrib/lucli/run.sh $(DEB_DESTDIR)/usr/bin/lucli
+	install -m 0644 $(wildcard $(CURDIR)/lucene/build/*.jar) \
+        $(wildcard $(CURDIR)/lucene/build/contrib/*/*.jar) \
+        $(DEB_DESTDIR)/usr/share/java
+
+build/liblucene4-java-doc::
+	cd lucene && $(ANT) javadocs-all
+
+install/liblucene4-java-doc::
+	install -m 0755 -d $(DEB_DESTDIR)/usr/share/java
+	install -m 0755 -d $(DEB_DESTDIR)/usr/share/doc/$(cdbs_curpkg)
+	cp -R lucene/build/docs/* $(DEB_DESTDIR)/usr/share/doc/$(cdbs_curpkg)
+	install -m 0644 $(wildcard find $(CURDIR)/lucene/build -name *javadoc.jar) \
+        $(DEB_DESTDIR)/usr/share/java
+
+build/solr-common::
+	cd solr && $(ANT) dist
+
+install/solr-common::
+	install -m 0755 -d $(DEB_DESTDIR)/etc/solr \
+        $(DEB_DESTDIR)/usr/share/solr/WEB-INF/lib \
+        $(DEB_DESTDIR)/usr/share/java
+	install -m 0644 $(wildcard solr/dist/*.jar) $(wildcard solr/dist/*.war) \
+        $(DEB_DESTDIR)/usr/share/java
+	cp -R solr/example/solr/conf $(DEB_DESTDIR)/etc/solr
+	unzip -d $(DEB_DESTDIR)/usr/share/solr \
+        $(CURDIR)/solr/dist/apache-solr-$(VERSION).war
+
+build/solr-doc::
+	cd solr && $(ANT) javadoc-all
+
+install/solr-doc::
+	install -m 0755 -d $(DEB_DESTDIR)/usr/share/doc/solr
+	cp -R solr/build/docs/* $(DEB_DESTDIR)/usr/share/doc/solr
+
+install/solr-scripts::
+	for file in $(CURDIR)/solr/src/scripts/*; do \
+	    install -m 0755 $$file $(DEB_DESTDIR)usr/bin/solr-`basename $$file`; \
+	done
+	mv $(DEB_DESTDIR)usr/bin/solr-scripts-util \
+		$(DEB_DESTDIR)usr/share/solr/scripts-util

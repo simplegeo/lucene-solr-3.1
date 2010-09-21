@@ -1,0 +1,7 @@
+/usr/share/solr/META-INF
+/usr/share/solr/WEB-INF
+/usr/share/solr/admin
+/usr/share/solr/favicon.ico
+/usr/share/solr/index.jsp
+/usr/share/java/apache-solr*
+/etc/solr

@@ -1,0 +1,63 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH LUCLI 1 "September 4, 2007"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+lucli \- command line interface to the Lucene full-text indexing library
+.SH SYNOPSIS
+.B lucli
+.SH DESCRIPTION
+\fBlucli\fP is a program that allows you to work directly with Lucene indexes.
+Once inside 
+.B lucli
+you can use the following commands:
+.TP
+\fBcount\fP
+Return the number of hits for a search. Example: count foo
+.TP
+\fBexplain\fP
+Explanation that describes how the document scored against query. Example: explain foo
+.TP
+\fBhelp\fP
+Display help about commands
+.TP
+\fBindex\fP
+Choose a different lucene index. Example index my_index
+.TP
+\fBinfo\fP
+Display info about the current Lucene index. Example: info
+.TP
+\fBoptimize\fP
+Optimize the current index
+.TP
+\fBquit\fP
+Quit/exit the program
+.TP
+\fBsearch\fP
+Search the current index. Example: search foo
+.TP
+\fBterms\fP
+Show the first 100 terms in this index. Supply a field name to only show terms in a specific field. Example: terms
+.TP
+\fBtokens\fP
+Does a search and shows the top 10 tokens for each document. Verbose! Example: tokens foo
+.br
+.SH AUTHOR
+lucli was written as a part of Lucene, the Java full-text indexing library. 
+See http://lucene.apache.org for more information.
+.PP
+This manual page was written by Jan-Pascal van Best <janpascal@vanbest.org>,
+for the Debian project (but may be used by others).

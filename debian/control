@@ -1,0 +1,148 @@
+Source: lucene-solr
+Section: java
+Priority: extra
+Maintainer: SimpleGeo Nerds <nerds@simplegeo.com>
+Uploaders: Ian Eure <ian@simplegeo.com>
+Homepage: http://lucene.apache.org/solr/
+Vcs-Browser: http://github.com/simplegeo/lucene-solr/
+Vcs-Git: git://github.com/simplegeo/lucene-solr.git
+Standards-Version: 3.9.0
+Build-Depends: openjdk-6-jdk, unzip
+Build-Depends-Indep:
+ ant (>= 1.7),
+ ant-contrib,
+ ant-optional (>= 1.7),
+ cdbs (>= 0.4.49),
+ debhelper (>= 7.4.10),
+ glassfish-mail (>= 1:2ur2-b04),
+ javacc,
+ junit4,
+ libcommons-beanutils-java (>= 1.7.0),
+ libcommons-codec-java (>= 1.4),
+ libcommons-collections3-java (>= 3.1),
+ libcommons-compress-java (>= 1.0),
+ libcommons-csv-java (>= 0.1-SNAPSHOT+svn678580),
+ libcommons-digester-java (>= 1.7),
+ libcommons-fileupload-java (>= 1.2.1),
+ libcommons-httpclient-java (>= 3.1),
+ libcommons-io-java (>= 1.4),
+ libcommons-logging-java (>= 1.0.4),
+ libdb-je-java (>= 3.2.68),
+ libdb4.7-java,
+ libicu4j-java (>= 3.8.1),
+ libjaxp1.3-java (>= 1.3.04),
+ libjetty-java (>= 6.1.21),
+ libjline-java (>= 0.9.5),
+ libjmock-java,
+ libjtidy-java (>= 7+svn20070309),
+ libregexp-java (>= 1.4),
+ libservlet2.5-java (>= 6.0.20),
+ libslf4j-java (>= 1.5.10),
+ libxml-commons-external-java (>= 1.3.04),
+ po-debconf
+
+Package: liblucene4-java
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: liblucene2-java
+Description: Full-text search engine library for Java(TM)
+ Lucene is a full-text search engine for the Java(TM) programming
+ language. Lucene is not a complete application, but rather a code
+ library and API that can easily be used to add search capabilities to
+ applications. This package contains class API documentation for
+ Lucene.
+
+Package: liblucene2-java-doc
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Documentation for Lucene
+ Lucene is a full-text search engine for the Java(TM) programming
+ language. Lucene is not a complete application, but rather a code
+ library and API that can easily be used to add search capabilities to
+ applications.
+ .
+ This package contains the Lucene core library and a number of
+ additional (contributed) libraries.
+
+Package: solr-common
+Architecture: all
+Depends: ${misc:Depends},
+ debconf (>= 1.5),
+ openjdk-6-jre-headless | java5-runtime-headless | java6-runtime-headless,
+ libcommons-codec-java (>= 1.4),
+ libcommons-csv-java (>= 0.1-SNAPSHOT+svn678580),
+ libcommons-fileupload-java (>= 1.2.1),
+ libcommons-httpclient-java (>= 3.1),
+ libcommons-io-java (>= 1.4),
+ libjaxp1.3-java (>= 1.3.04),
+ libjetty-java (>= 6.1.21),
+ liblucene4-java (>= ${binary:Version}),
+ libservlet2.5-java (>= 6.0.20),
+ libslf4j-java (>= 1.5.10),
+ libxml-commons-external-java (>= 1.3.04),
+ glassfish-mail (>= 1:2ur2-b04),
+ libgeronimo-stax-1.0-spec-java
+Recommends: solr-tomcat (>= ${binary:Version}) | solr-jetty (>= ${binary:Version}), solr-scripts
+Suggests: libmysql-java
+Description: enterprise search server based on Lucene - common files
+ Solr is an open source enterprise search server based on the Lucene
+ Java search library, with XML/HTTP and JSON APIs, hit highlighting,
+ faceted search, caching, replication, and a web administration
+ interface. It runs in a Java servlet container such as Tomcat.
+ .
+ This package provides the common files for Solr. Install
+ solr-tomcat or solr-jetty to use Solr under Tomcat or Jetty.
+ .
+ This package also contains the dataimporthandler contrib while omiting
+ dataimporthandler-extras, clustering, extraction and velocity due to missing
+ dependencies.
+ .
+ libmysql-java is necessary to connect the dataimporthandler to MySQL.
+
+Package: solr-tomcat
+Architecture: all
+Depends: ${misc:Depends}, solr-common (= ${binary:Version}), tomcat6 (>= 6.0.20)
+Conflicts: solr-jetty, solr-tomcat6
+Description: enterprise search server based on Lucene - Tomcat integration
+ Solr is an open source enterprise search server based on the Lucene
+ Java search library, with XML/HTTP and JSON APIs, hit highlighting,
+ faceted search, caching, replication, and a web administration
+ interface. It runs in a Java servlet container such as Tomcat.
+ .
+ This package provides the Tomcat integration files for Solr.
+
+Package: solr-jetty
+Architecture: all
+Depends: ${misc:Depends}, solr-common (= ${binary:Version}), jetty (>= 6.1.22),
+ libjetty-extra-java (>= 6.1.22)
+Conflicts: solr-tomcat
+Description: enterprise search server based on Lucene - Jetty integration
+ Solr is an open source enterprise search server based on the Lucene
+ Java search library, with XML/HTTP and JSON APIs, hit highlighting,
+ faceted search, caching, replication, and a web administration
+ interface. It runs in a Java servlet container such as Tomcat.
+ .
+ This package provides the Jetty integration files for Solr.
+
+Package: solr-doc
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Documentation for Solr
+ Solr is an open source enterprise search server based on the Lucene
+ Java search library, with XML/HTTP and JSON APIs, hit highlighting,
+ faceted search, caching, replication, and a web administration
+ interface. It runs in a Java servlet container such as Tomcat.
+ .
+ This package provides the Solr documentation.
+
+Package: solr-scripts
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Utility scripts for Solr
+ Solr is an open source enterprise search server based on the Lucene
+ Java search library, with XML/HTTP and JSON APIs, hit highlighting,
+ faceted search, caching, replication, and a web administration
+ interface. It runs in a Java servlet container such as Tomcat.
+ .
+ This package provides scripts for managing Solr replication and
+ snapshots.

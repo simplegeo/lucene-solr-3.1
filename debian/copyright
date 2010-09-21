@@ -1,0 +1,49 @@
+This work was packaged for Debian by:
+
+    Ian Eure <ian@simplegeo.com> on Mon, 20 Sep 2010 17:51:35 -0700
+
+And was based in part on the Sole & Lucene packaging for Debian by:
+
+    Jan-Pascal van Best <janpascal@vanbest.org>
+
+It was downloaded from http://github.com/apache/lucene-solr/
+
+Apache Lucene/Solr is
+    Copyright 2007,2008,2009 The Apache Software Foundation
+
+Upstream Authors:
+    Doug Cutting <cutting@apache.org>
+    Erik Hatcher <ehatcher@apacher.org> 
+    Otis Gospodnetic <otis@apache.org> 
+    et.al.
+
+License:
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+On Debian systems, the complete text of the Apache version 2.0 license
+can be found in `/usr/share/common-licenses/Apache-2.0'.
+
+The Debian packaging is:
+
+    Copyright (C) 2010 SimpleGeo, Inc.
+    Copyright 2007,2008,2009 by Jan-Pascal van Best <janpascal@vanbest.org>
+
+# Please chose a license for your packaging work. If the program you package
+# uses a mainstream license, using the same license is the safest choice.
+# Please avoid to pick license terms that are more restrictive than the
+# packaged work, as it may make Debian's contributions unacceptable upstream.
+# If you just want it to be GPL version 3, leave the following lines in.
+
+and is licensed under the Apache License, version 2, see
+`/usr/share/common-licenses/Apache-2.0'.
