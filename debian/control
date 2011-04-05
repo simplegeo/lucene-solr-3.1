@@ -41,7 +41,7 @@ Build-Depends-Indep:
  libxml-commons-external-java (>= 1.3.04),
  po-debconf
 
-Package: liblucene4-java
+Package: liblucene3-java
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: liblucene2-java
@@ -52,7 +52,7 @@ Description: Full-text search engine library for Java(TM)
  applications. This package contains class API documentation for
  Lucene.
 
-Package: liblucene2-java-doc
+Package: liblucene3-java-doc
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Documentation for Lucene
