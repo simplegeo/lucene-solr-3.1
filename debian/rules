@@ -7,7 +7,7 @@ include /usr/share/cdbs/1/class/ant.mk
 # Add here any variable or target overrides you need.
 
 ARTIFACTS ?= .
-VERSION = 4.0-dev
+VERSION = 3.1-SNAPSHOT
 JAVA_HOME := /usr/lib/jvm/java-6-openjdk
 DEB_ANT_CHECK_TARGET := #test
 DEB_ANT_BUILD_TARGET := compile
