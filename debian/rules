@@ -61,6 +61,8 @@ install/solr-doc::
 	cp -R solr/build/docs/* $(DEB_DESTDIR)/usr/share/doc/solr
 
 install/solr-scripts::
+	install -m 0755 -d $(DEB_DESTDIR)usr/bin
+	install -m 0755 -d $(DEB_DESTDIR)usr/share/solr
 	for file in $(CURDIR)/solr/src/scripts/*; do \
 	    install -m 0755 $$file $(DEB_DESTDIR)usr/bin/solr-`basename $$file`; \
 	done
