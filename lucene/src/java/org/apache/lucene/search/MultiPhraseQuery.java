@@ -197,12 +197,12 @@ public class MultiPhraseQuery extends Query {
             return null;
         }
 
-        postingsFreqs[pos] = new PhraseQuery.PostingsAndFreq(p, docFreq, positions.get(pos).intValue());
+        postingsFreqs[pos] = new PhraseQuery.PostingsAndFreq(p, docFreq, positions.get(pos).intValue(), terms[0]);
       }
 
       // sort by increasing docFreq order
       if (slop == 0) {
-        ArrayUtil.quickSort(postingsFreqs);
+        ArrayUtil.mergeSort(postingsFreqs);
       }
 
       if (slop == 0) {

@@ -21,6 +21,32 @@ when more advanced customization is required.
 See README.txt and http://lucene.apache.org/solr for more information
 on how to get started.
 
+==================  3.1 branch (not yet released) ==================
+
+Bug Fixes
+----------------------
+
+* SOLR-2445: Change the default qt to blank in form.jsp, because there is no "standard"
+  request handler unless you have it in your solrconfig.xml explicitly.
+  (Gabriele Kahlout via koji)
+
+* SOLR-2493: SolrQueryParser was fixed to not parse the SolrConfig DOM tree on each
+  instantiation which is a huge slowdown.  (Stephane Bailliez via uschindler)
+
+* SOLR-2495: The JSON parser could hang on corrupted input and could fail
+  to detect numbers that were too large to fit in a long.  (yonik)
+
+Other Changes
+----------------------
+
+* SOLR-2528: Remove default="true" from HtmlEncoder in example solrconfig.xml,
+  because html encoding confuses non-ascii users. (koji)
+
+Build
+----------------------
+
+Documentation
+----------------------
 
 ==================  3.1.0 ==================
 Versions of Major Components
