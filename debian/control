@@ -41,7 +41,9 @@ Build-Depends-Indep:
  libxml-commons-external-java (>= 1.3.04),
  po-debconf
 
-Package: liblucene3-java
+Package: liblucene3.1-java
+Provides: liblucene-java, liblucene3-java
+Section: java
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: liblucene2-java, liblucene4-java
@@ -52,7 +54,9 @@ Description: Full-text search engine library for Java(TM)
  applications. This package contains class API documentation for
  Lucene.
 
-Package: liblucene3-java-doc
+Package: liblucene3.1-java-doc
+Provides: liblucene-java-doc, liblucene3-java-doc
+Section: doc
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Documentation for Lucene
@@ -64,7 +68,9 @@ Description: Documentation for Lucene
  This package contains the Lucene core library and a number of
  additional (contributed) libraries.
 
-Package: solr-common
+Package: solr3.1-common
+Provides: solr-common, solr3-common
+Section: net
 Architecture: all
 Depends: ${misc:Depends},
  debconf (>= 1.5),
@@ -76,7 +82,7 @@ Depends: ${misc:Depends},
  libcommons-io-java (>= 1.4),
  libjaxp1.3-java (>= 1.3.04),
  libjetty-java (>= 6.1.21),
- liblucene3-java (>= ${binary:Version}),
+ liblucene-java (>= ${binary:Version}),
  libservlet2.5-java (>= 6.0.20),
  libslf4j-java (>= 1.5.10),
  libxml-commons-external-java (>= 1.3.04),
@@ -99,9 +105,13 @@ Description: enterprise search server based on Lucene - common files
  .
  libmysql-java is necessary to connect the dataimporthandler to MySQL.
 
-Package: solr-tomcat
+Package: solr3.1-tomcat
+Provides: solr-tomcat, solr3-tomcat
+Section: net
 Architecture: all
-Depends: ${misc:Depends}, solr-common (= ${binary:Version}), tomcat6 (>= 6.0.20)
+Depends: ${misc:Depends},
+ solr-common (= ${binary:Version}),
+ tomcat6 (>= 6.0.20)
 Conflicts: solr-jetty, solr-tomcat6
 Description: enterprise search server based on Lucene - Tomcat integration
  Solr is an open source enterprise search server based on the Lucene
@@ -111,9 +121,13 @@ Description: enterprise search server based on Lucene - Tomcat integration
  .
  This package provides the Tomcat integration files for Solr.
 
-Package: solr-jetty
+Package: solr3.1-jetty
+Provides: solr-jetty, solr3-jetty
+Section: net
 Architecture: all
-Depends: ${misc:Depends}, solr-common (= ${binary:Version}), jetty (>= 6.1.22),
+Depends: ${misc:Depends},
+ solr-common (= ${binary:Version}),
+ jetty (>= 6.1.22),
  libjetty-extra-java (>= 6.1.22)
 Conflicts: solr-tomcat
 Description: enterprise search server based on Lucene - Jetty integration
@@ -124,7 +138,9 @@ Description: enterprise search server based on Lucene - Jetty integration
  .
  This package provides the Jetty integration files for Solr.
 
-Package: solr-doc
+Package: solr3.1-doc
+Provides: solr-doc, solr3-doc
+Section: doc
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Documentation for Solr
@@ -135,7 +151,9 @@ Description: Documentation for Solr
  .
  This package provides the Solr documentation.
 
-Package: solr-scripts
+Package: solr3.1-scripts
+Provides: solr-scripts, solr3-scripts
+Section: extra
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Utility scripts for Solr
