@@ -7,7 +7,7 @@ Homepage: http://lucene.apache.org/solr/
 Vcs-Browser: http://github.com/simplegeo/lucene-solr/
 Vcs-Git: git://github.com/simplegeo/lucene-solr.git
 Standards-Version: 3.9.0
-Build-Depends: openjdk-6-jdk, unzip
+Build-Depends: sun-java6-jdk | openjdk-6-jdk, unzip
 Build-Depends-Indep:
  ant (>= 1.7),
  ant-contrib,
